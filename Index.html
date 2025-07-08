@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasang Piyo Official - Home</title>
+    
+    <meta name="description" content="Sasang Piyo Official is a leading Santali production house creating music albums, short films, and comedy videos.">
+    <meta name="keywords" content="Sasang Piyo, Santali album, Santali video, Rupmahar Studio, Santali production house">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Dark Theme (Default) */
+            --bg-dark: #121212; --bg-light: #1E1E1E; --text-primary: #FFFFFF;
+            --text-secondary: #b3b3b3; --brand-color: #DAA520; --border-color: #2c2c2c;
+            --font-heading: 'Teko', sans-serif; --font-body: 'Poppins', sans-serif;
+        }
+        body.light-theme {
+            /* Light Theme Variables */
+            --bg-dark: #FFFFFF; --bg-light: #f5f5f5; --text-primary: #121212;
+            --text-secondary: #555555; --brand-color: #C8961E; --border-color: #dddddd;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); font-family: var(--font-body); color: var(--text-primary); transition: background-color 0.3s, color 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .main-content { padding: 20px 0; }
+        .section { margin-bottom: 30px; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .section-title { font-family: var(--font-heading); font-size: 28px; color: var(--text-primary); }
+        .view-all { text-decoration: none; color: var(--brand-color); font-size: 14px; font-weight: 500; }
+        
+        /* Slider */
+        .swiper-slide a { display: block; }
+        .swiper-slide img { width: 100%; border-radius: 10px; aspect-ratio: 16/9; object-fit: cover; }
+        .swiper-pagination-bullet-active { background: var(--brand-color); }
+
+        /* Horizontal Scroll for Homepage Sections */
+        .horizontal-scroll-container { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 15px; scrollbar-width: none; }
+        .horizontal-scroll-container::-webkit-scrollbar { display: none; }
+        
+        /* === Homepage Specific Item Styles === */
+        /* Style for Video & Image thumbs */
+        .scroll-item-thumb { flex: 0 0 45%; }
+        .scroll-item-thumb img { width: 100%; border-radius: 8px; display: block; aspect-ratio: 16/9; object-fit: cover; }
+
+        /* Style for Channel, Team, Platform icons */
+        .scroll-item-icon {
+            flex: 0 0 100px;
+            text-align: center;
+        }
+        .scroll-item-icon a { text-decoration: none; }
+        .scroll-item-icon img {
+            width: 70px; height: 70px;
+            border-radius: 50%; object-fit: cover;
+            margin-bottom: 10px; border: 2px solid var(--border-color);
+        }
+        .scroll-item-icon h4 {
+            font-family: var(--font-heading); font-size: 18px; font-weight: 500;
+            color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .scroll-item-icon p { font-family: var(--font-body); font-size: 12px; color: var(--text-secondary); }
+
+        /* Popular Videos Grid */
+        .section-content-wrapper { background-color: var(--bg-light); border-radius: 12px; padding: 20px; border: 1px solid var(--border-color); }
+        .popular-videos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .popular-video-card a { text-decoration: none; }
+        .popular-video-card img { width: 100%; border-radius: 8px; display: block; aspect-ratio: 16/9; object-fit: cover; }
+        .video-stats { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--text-secondary); margin-top: 8px; }
+        .video-stats i { margin-right: 4px; }
+        
+        /* About Section */
+        .about-section { text-align: center; }
+        .about-section .section-title { margin-bottom: 15px; }
+        .about-section p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+        .about-section .see-more { display: inline-block; margin-top: 20px; color: var(--brand-color); text-decoration: none; font-weight: 600; }
+
+        .loading-placeholder { color: var(--text-secondary); font-style: italic; padding: 20px; width: 100%; text-align: center; }
+        .section[data-search-keywords] { display: block; } /* Ensure sections are visible by default */
+
+        @media (min-width: 768px) {
+            .scroll-item-thumb { flex-basis: 30%; }
+            .popular-videos-grid { grid-template-columns: repeat(3, 1fr); }
+            .scroll-item-icon { flex-basis: 120px; }
+        }
+        @media (min-width: 992px) { .scroll-item-thumb { flex-basis: 23%; } }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    
+    <div class="container">
+        <main class="main-content">
+            <section class="section" data-search-keywords="banner slider new album latest">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="shopping.html"><img src="images/banner100.png" alt="Grand Opening Sale"></a></div>
+                        <div class="swiper-slide"><a href="studio.html"><img src="images/banner101.png" alt="Rupmahar Studio Photography"></a></div>
+                        <div class="swiper-slide"><a href="video.html"><img src="images/banner102.png" alt="New Short Film"></a></div>
+                        <div class="swiper-slide"><a href="catering.html"><img src="images/banner103.png" alt="Catering Services"></a></div>
+                        <div class="swiper-slide"><a href="new-artist.html"><img src="images/banner104.png" alt="Join Our Team"></a></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <section class="section" data-search-keywords="recent videos music comedy sketch">
+                <div class="section-header"><h2 class="section-title">RECENT VIDEOS</h2><a href="work-portfolio.html" class="view-all">VIEW ALL</a></div>
+                <div class="horizontal-scroll-container" id="recent-videos-container">
+                    <p class="loading-placeholder">Loading Videos...</p>
+                </div>
+            </section>
+
+            <section class="section" data-search-keywords="recent photos images gallery shoot">
+                <div class="section-header"><h2 class="section-title">RECENT PHOTOS</h2><a href="image.html" class="view-all">VIEW ALL</a></div>
+                <div class="horizontal-scroll-container" id="recent-photos-container">
+                    <p class="loading-placeholder">Loading Photos...</p>
+                </div>
+            </section>
+            
+            <section class="section" data-search-keywords="popular videos top hits">
+                <div class="section-header"><h2 class="section-title">POPULAR VIDEOS</h2></div>
+                <div class="section-content-wrapper">
+                    <div class="popular-videos-grid" id="popular-videos-container">
+                        <p class="loading-placeholder">Loading Popular Videos...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" data-search-keywords="our channels official rupmahar comedy">
+                <div class="section-header"><h2 class="section-title">OUR CHANNELS</h2><a href="channel.html" class="view-all">VIEW ALL</a></div>
+                <div class="horizontal-scroll-container" id="channels-container">
+                    <p class="loading-placeholder">Loading Channels...</p>
+                </div>
+            </section>
+
+            <section class="section" data-search-keywords="our team director producer">
+                <div class="section-header"><h2 class="section-title">OUR TEAM</h2><a href="team.html" class="view-all">VIEW ALL</a></div>
+                <div class="horizontal-scroll-container" id="team-container">
+                    <p class="loading-placeholder">Loading Team...</p>
+                </div>
+            </section>
+
+            <section class="section" data-search-keywords="available on spotify jiosaavn">
+                <div class="section-header"><h2 class="section-title">AVAILABLE ON</h2><a href="sasang-piyo-available.html" class="view-all">VIEW ALL</a></div>
+                <div class="horizontal-scroll-container" id="platforms-container">
+                    <p class="loading-placeholder">Loading Platforms...</p>
+                </div>
+            </section>
+
+            <section class="section about-section" data-search-keywords="about sasang piyo">
+                <div class="section-content-wrapper">
+                    <h2 class="section-title">SASANG PIYO OFFICIAL</h2>
+                    <p>Sasang Piyo Official is a Santali production house committed to promoting culture, creativity, and community... (Full text will be here)</p>
+                    <a href="about.html" class="see-more">See more...</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="main.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize Swiper
+            new Swiper('.swiper', { 
+                loop: true, 
+                autoplay: { delay: 3000 },
+                pagination: { el: '.swiper-pagination', clickable: true },
+            });
+
+            const parser = new DOMParser();
+
+            async function fetchAndInject(config) {
+                const { url, sourceSelector, targetSelector, maxItems, itemWrapperClass, isGrid } = config;
+                const targetContainer = document.querySelector(targetSelector);
+                if (!targetContainer) return;
+
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`Network error for ${url}`);
+                    
+                    const htmlText = await response.text();
+                    const doc = parser.parseFromString(htmlText, 'text/html');
+                    const items = doc.querySelectorAll(sourceSelector);
+
+                    targetContainer.innerHTML = '';
+                    if (items.length === 0) {
+                        targetContainer.innerHTML = '<p class="loading-placeholder">No content found.</p>';
+                        return;
+                    }
+
+                    Array.from(items).slice(0, maxItems).forEach(item => {
+                        const clone = item.cloneNode(true);
+                        clone.querySelectorAll('a').forEach(a => a.target = '_blank');
+                        
+                        // For homepage, wrap the item in a specific div for styling
+                        if (itemWrapperClass) {
+                            const wrapper = document.createElement('div');
+                            wrapper.className = itemWrapperClass;
+                            
+                            // Special handling for icon-based items
+                            if (itemWrapperClass === 'scroll-item-icon') {
+                                const link = clone.querySelector('a')?.href || '#';
+                                const img = clone.querySelector('img')?.src || '';
+                                const name = clone.querySelector('h3, h4')?.textContent || 'Name';
+                                const role = clone.querySelector('p')?.textContent || '';
+                                wrapper.innerHTML = `
+                                    <a href="${link}" target="_blank">
+                                        <img src="${img}" alt="${name}">
+                                        <h4>${name}</h4>
+                                        ${role ? `<p>${role}</p>` : ''}
+                                    </a>
+                                `;
+                            } else {
+                                wrapper.appendChild(clone);
+                            }
+                            targetContainer.appendChild(wrapper);
+                        } else {
+                            targetContainer.appendChild(clone);
+                        }
+                    });
+
+                } catch (error) {
+                    console.error(`Failed to load from ${url}:`, error);
+                    targetContainer.innerHTML = `<p class="loading-placeholder" style="color:red;">Error loading content.</p>`;
+                }
+            }
+            
+            const contentConfigs = [
+                { url: 'work-portfolio.html', sourceSelector: '.portfolio-thumbnail', targetSelector: '#recent-videos-container', maxItems: 5, itemWrapperClass: 'scroll-item-thumb' },
+                { url: 'image.html', sourceSelector: '.pin a', targetSelector: '#recent-photos-container', maxItems: 5, itemWrapperClass: 'scroll-item-thumb' },
+                { url: 'work-portfolio.html', sourceSelector: '.portfolio-card', targetSelector: '#popular-videos-container', maxItems: 6 },
+                { url: 'channel.html', sourceSelector: '.channel-card', targetSelector: '#channels-container', maxItems: 4, itemWrapperClass: 'scroll-item-icon' },
+                { url: 'team.html', sourceSelector: '.team-member-card', targetSelector: '#team-container', maxItems: 4, itemWrapperClass: 'scroll-item-icon' },
+                { url: 'sasang-piyo-available.html', sourceSelector: '.platform-card', targetSelector: '#platforms-container', maxItems: 5, itemWrapperClass: 'scroll-item-icon' }
+            ];
+
+            contentConfigs.forEach(fetchAndInject);
+
+            // Search Functionality
+            const observer = new MutationObserver(() => {
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) {
+                    searchInput.addEventListener('input', function() {
+                        const query = this.value.trim().toLowerCase();
+                        document.querySelectorAll('.section[data-search-keywords]').forEach(section => {
+                            const keywords = section.dataset.searchKeywords.toLowerCase();
+                            section.style.display = keywords.includes(query) ? 'block' : 'none';
+                        });
+                    });
+                    observer.disconnect();
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+    </script>
+</body>
+</html>

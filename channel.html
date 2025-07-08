@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Channels - Sasang Piyo Official</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Dark Theme (Default) */
+            --bg-dark: #121212; --bg-light: #1E1E1E; --text-primary: #FFFFFF;
+            --text-secondary: #b3b3b3; --brand-color: #DAA520; --border-color: #2c2c2c;
+            --font-heading: 'Teko', sans-serif; --font-body: 'Poppins', sans-serif;
+        }
+        body.light-theme {
+            /* Light Theme Variables */
+            --bg-dark: #FFFFFF; --bg-light: #f5f5f5; --text-primary: #121212;
+            --text-secondary: #555555; --brand-color: #C8961E; --border-color: #dddddd;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-dark); font-family: var(--font-body); color: var(--text-primary); transition: background-color 0.3s, color 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        a { color: var(--brand-color); text-decoration: none; }
+        
+        /* Main Content */
+        .main-content { padding: 20px 0; }
+        .page-header { text-align: center; margin: 20px 0 40px; }
+        .page-header h1 { font-family: var(--font-heading); font-size: 42px; color: var(--text-primary); }
+        .page-header p { color: var(--text-secondary); max-width: 600px; margin: 10px auto 0; }
+        
+        /* Channels Grid */
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .channel-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .channel-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .channel-logo { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--brand-color); }
+        .channel-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .channel-name { font-size: 22px; font-weight: 600; margin-bottom: 15px; color: var(--text-primary); }
+        .channel-stats { display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 18px; font-weight: 600; color: var(--text-primary); }
+        .stat-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; }
+        .subscribe-btn {
+            background: #FF0000; color: #FFFFFF; border: none; padding: 10px 25px;
+            border-radius: 30px; font-weight: 600; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: background-color 0.3s;
+        }
+        .subscribe-btn:hover { background: #cc0000; }
+        .subscribe-btn i { font-size: 16px; }
+
+        .loading-text {
+            color: var(--text-secondary);
+            text-align: center;
+            grid-column: 1 / -1; /* Make it span all columns */
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- হেডার এখানে লোড হবে -->
+    <div id="header-placeholder"></div>
+    
+    <div class="container">
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Our YouTube Channels</h1>
+                <p>Subscribe to our channels to get the latest updates on music, comedy, and more.</p>
+            </div>
+            
+            <div class="channels-grid" id="channels-grid">
+                <div class="loading-text">
+                    <i class="fas fa-spinner fa-spin"></i> Loading channels...
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- ফুটার এখানে লোড হবে -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- এই স্ক্রিপ্টটি প্রতিটি পেজের শেষে থাকবে -->
+    <script src="main.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // !! গুরুত্বপূর্ণ !! আপনার YouTube API Key এখানে দিন
+            const apiKey = 'AIzaSyCmmWEzjQfX-0paqFHs76kl_0gMXnuxVDI'; // যেমন: 'AIzaSy...VDI'
+            
+            const channels = [
+                { id: 'UCUR9qZ_MCyvaSjGt9Rf6a6A', name: 'Sasang Piyo Official' },
+                { id: 'UCR15rbQC9lfMoEGxva0CIPA', name: 'SP Gang11' },
+                { id: 'UCwJiDPg2MjwZOsQWzGiTbDQ', name: 'SP Gaming' },
+                { id: 'UCSoqz4iZ-8Lh3pyDnbi-5Cg', name: 'Rupmahar Studio' },
+                { id: 'UC4Yksjn1wtYp-AD7z6D5h_Q', name: 'Debratan Besra' }
+            ];
+
+            const gridContainer = document.getElementById('channels-grid');
+
+            async function fetchChannelData() {
+                if (!apiKey || apiKey === 'YOUR_YOUTUBE_API_KEY') {
+                    gridContainer.innerHTML = '<div class="loading-text" style="color: red;">Error: YouTube API Key is not configured.</div>';
+                    console.error('YouTube API Key is missing.');
+                    return;
+                }
+
+                const channelIds = channels.map(c => c.id).join(',');
+                const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelIds}&key=${apiKey}`;
+
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`API error! Status: ${response.status}. Message: ${errorData.error.message}`);
+                    }
+                    
+                    const data = await response.json();
+                    renderChannels(data.items);
+                } catch (error) {
+                    console.error('Error fetching channel data:', error);
+                    gridContainer.innerHTML = '<div class="loading-text" style="color: red;">Could not load channel data. Please check the API Key and console for errors.</div>';
+                }
+            }
+
+            function renderChannels(channelItems) {
+                gridContainer.innerHTML = ''; // Clear loading text
+
+                if (channelItems.length === 0) {
+                    gridContainer.innerHTML = '<div class="loading-text">No channels found.</div>';
+                    return;
+                }
+
+                channelItems.forEach(item => {
+                    const stats = item.statistics;
+                    const snippet = item.snippet;
+                    const channelUrl = `https://www.youtube.com/channel/${item.id}`;
+
+                    const formatNumber = (numStr) => {
+                        const num = parseInt(numStr, 10);
+                        if (isNaN(num)) return '0';
+                        if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+                        if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+                        return num.toString();
+                    };
+
+                    const subscriberCount = stats.hiddenSubscriberCount ? 'Hidden' : formatNumber(stats.subscriberCount);
+                    const videoCount = stats.videoCount;
+                    const viewCount = formatNumber(stats.viewCount);
+
+                    const channelCard = document.createElement('div');
+                    channelCard.className = 'channel-card';
+                    channelCard.innerHTML = `
+                        <a href="${channelUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <div class="channel-logo">
+                                <img src="${snippet.thumbnails.high.url}" alt="${snippet.title} Logo">
+                            </div>
+                            <h3 class="channel-name">${snippet.title}</h3>
+                        </a>
+                        <div class="channel-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">${subscriberCount}</div>
+                                <div class="stat-label">Subscribers</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">${videoCount}</div>
+                                <div class="stat-label">Videos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">${viewCount}</div>
+                                <div class="stat-label">Views</div>
+                            </div>
+                        </div>
+                        <a href="${channelUrl}?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="subscribe-btn">
+                            <i class="fab fa-youtube"></i> Subscribe
+                        </a>
+                    `;
+                    gridContainer.appendChild(channelCard);
+                });
+            }
+
+            // Fetch channel data when page loads
+            fetchChannelData();
+        });
+    </script>
+</body>
+</html>

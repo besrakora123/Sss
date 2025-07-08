@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available On - Sasang Piyo Official</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Dark Theme (Default) */
+            --bg-dark: #121212; --bg-light: #1E1E1E; --text-primary: #FFFFFF;
+            --text-secondary: #b3b3b3; --brand-color: #DAA520; --border-color: #2c2c2c;
+            --font-heading: 'Teko', sans-serif; --font-body: 'Poppins', sans-serif;
+        }
+        body.light-theme {
+            /* Light Theme Variables */
+            --bg-dark: #FFFFFF; --bg-light: #f5f5f5; --text-primary: #121212;
+            --text-secondary: #555555; --brand-color: #C8961E; --border-color: #dddddd;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-dark); font-family: var(--font-body); color: var(--text-primary); transition: background-color 0.3s, color 0.3s; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 15px; }
+        a { color: var(--brand-color); text-decoration: none; }
+
+        /* Main Content */
+        .main-content { padding: 40px 0; }
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-family: var(--font-heading); font-size: 48px; color: var(--text-primary); }
+        .page-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 10px auto 0 auto; line-height: 1.7; }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+        }
+
+        /* Platform Grid */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px; /* Add space between sections */
+        }
+        .platform-card {
+            background-color: var(--bg-light);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .platform-card img, .platform-card .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .platform-card .icon {
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-info {
+            flex-grow: 1;
+        }
+        .platform-info h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+        .platform-info p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .platform-btn {
+            background-color: var(--brand-color);
+            color: #121212;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .platform-btn:hover {
+            background-color: #ffc107;
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- হেডার এখানে লোড হবে -->
+    <div id="header-placeholder"></div>
+    
+    <div class="container">
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Find Us Everywhere</h1>
+                <p>Listen to our music, watch our videos, and connect with us on your favorite platforms. Follow us to stay updated with our latest releases.</p>
+            </div>
+
+            <!-- Music Platforms Section -->
+            <section>
+                <h2 class="section-title">Listen to Our Music</h2>
+                <div class="platform-grid">
+                    <!-- Spotify -->
+                    <div class="platform-card">
+                        <img src="images/platform_spotify.png" alt="Spotify Logo">
+                        <div class="platform-info">
+                            <h3>Spotify</h3>
+                            <p>The world's largest music streaming service.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Listen Now</a>
+                    </div>
+                    <!-- JioSaavn -->
+                    <div class="platform-card">
+                        <img src="images/platform_jiosaavn.png" alt="JioSaavn Logo">
+                        <div class="platform-info">
+                            <h3>JioSaavn</h3>
+                            <p>Popular in India for a vast library of songs.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Listen Now</a>
+                    </div>
+                    <!-- Wynk Music -->
+                    <div class="platform-card">
+                        <img src="images/platform_wynk.png" alt="Wynk Music Logo">
+                        <div class="platform-info">
+                            <h3>Wynk Music</h3>
+                            <p>Enjoy music on the go with Airtel's music app.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Listen Now</a>
+                    </div>
+                     <!-- Amazon Music -->
+                    <div class="platform-card">
+                        <img src="images/platform_amazon.png" alt="Amazon Music Logo">
+                        <div class="platform-info">
+                            <h3>Amazon Music</h3>
+                            <p>Stream our songs with your Amazon Prime account.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Listen Now</a>
+                    </div>
+                     <!-- Apple Music -->
+                    <div class="platform-card">
+                        <img src="images/platform_apple.png" alt="Apple Music Logo">
+                        <div class="platform-info">
+                            <h3>Apple Music</h3>
+                            <p>High-quality audio for all Apple device users.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Listen Now</a>
+                    </div>
+                     <!-- YouTube Music -->
+                    <div class="platform-card">
+                        <img src="images/platform_youtubemusic.png" alt="YouTube Music Logo">
+                        <div class="platform-info">
+                            <h3>YouTube Music</h3>
+                            <p>Listen to our official audio tracks on YouTube.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Listen Now</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social & Other Platforms Section -->
+            <section>
+                <h2 class="section-title">Connect With Us</h2>
+                <div class="platform-grid">
+                    <!-- YouTube -->
+                    <div class="platform-card">
+                        <span class="icon" style="color:#FF0000;"><i class="fab fa-youtube"></i></span>
+                        <div class="platform-info">
+                            <h3>YouTube</h3>
+                            <p>Watch all our music videos, films & shorts.</p>
+                        </div>
+                        <a href="https://youtube.com/@sasangpiyoofficial" target="_blank" class="platform-btn">Watch Now</a>
+                    </div>
+                    <!-- Facebook -->
+                    <div class="platform-card">
+                        <span class="icon" style="color:#1877F2;"><i class="fab fa-facebook-f"></i></span>
+                        <div class="platform-info">
+                            <h3>Facebook</h3>
+                            <p>Get daily updates, news, and behind the scenes.</p>
+                        </div>
+                        <a href="https://www.facebook.com/sasangpiyoofficial" target="_blank" class="platform-btn">Follow Us</a>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="platform-card">
+                        <span class="icon" style="color:#E4405F;"><i class="fab fa-instagram"></i></span>
+                        <div class="platform-info">
+                            <h3>Instagram</h3>
+                            <p>Enjoy our latest photos, stories, and reels.</p>
+                        </div>
+                        <a href="https://www.instagram.com/sasangpiyoofficial" target="_blank" class="platform-btn">Follow Us</a>
+                    </div>
+                    <!-- Twitter / X -->
+                    <div class="platform-card">
+                        <span class="icon" style="color:var(--text-primary);"><i class="fab fa-twitter"></i></span>
+                        <div class="platform-info">
+                            <h3>Twitter (X)</h3>
+                            <p>Quick announcements and thoughts.</p>
+                        </div>
+                        <a href="https://x.com/sasangpiyo" target="_blank" class="platform-btn">Follow Us</a>
+                    </div>
+                    <!-- WhatsApp Channel -->
+                    <div class="platform-card">
+                        <span class="icon" style="color:#25D366;"><i class="fab fa-whatsapp"></i></span>
+                        <div class="platform-info">
+                            <h3>WhatsApp</h3>
+                            <p>Join our channel for exclusive updates.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Join Now</a>
+                    </div>
+                    <!-- LinkedIn -->
+                    <div class="platform-card">
+                        <span class="icon" style="color:#0A66C2;"><i class="fab fa-linkedin-in"></i></span>
+                        <div class="platform-info">
+                            <h3>LinkedIn</h3>
+                            <p>For professional connections and partnerships.</p>
+                        </div>
+                        <a href="#" target="_blank" class="platform-btn">Connect</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- ফুটার এখানে লোড হবে -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- এই স্ক্রিপ্টটি প্রতিটি পেজের শেষে থাকবে -->
+    <script src="main.js" defer></script>
+</body>
+</html>

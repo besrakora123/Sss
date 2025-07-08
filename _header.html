@@ -1,0 +1,117 @@
+<div class="header-wrapper">
+    <div class="container">
+        <header class="header">
+            <i class="fas fa-bars hamburger-menu"></i>
+            <div class="search-container">
+                <input type="text" id="search-input" data-translate-key="search_placeholder" placeholder="Search...">
+            </div>
+            <div class="header-socials">
+                <a href="https://youtube.com/@sasangpiyoofficial" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/sasangpiyoofficial" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sasangpiyoofficial" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <!-- Language and Theme controls -->
+            <div class="controls-container">
+                <select id="language-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="sat">ᱥᱟᱱᱛᱟᱲᱤ</option>
+                </select>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="header-logo">
+                <a href="index.html"><img src="images/logo.png" alt="Sasang Piyo Official Logo"></a>
+            </div>
+        </header>
+    </div>
+</div>
+
+<div class="overlay"></div>
+<nav class="side-nav" id="side-nav">
+    <div class="side-nav-main">
+        <div class="side-nav-header">
+            <div class="side-nav-title">
+                <span class="title-text">SASANG PIYO OFFICIAL</span>
+                <span class="reflection-text">SASANG PIYO OFFICIAL</span>
+            </div>
+            <i class="fas fa-times close-btn"></i>
+        </div>
+        <div class="side-nav-links">
+            <a href="index.html" data-translate-key="nav_home">Home</a>
+            <a href="production.html" data-translate-key="nav_production">Production</a>
+            <a href="studio.html" data-translate-key="nav_studio">Studio</a>
+            <a href="catering.html" data-translate-key="nav_catering">Catering</a>
+            <a href="shopping.html">Store</a> <!-- নতুন "Store" লিঙ্ক যোগ করা হয়েছে -->
+            <a href="video.html" data-translate-key="nav_videos">Videos</a>
+            <a href="image.html" data-translate-key="nav_images">Images</a>
+            <a href="channel.html" data-translate-key="nav_channel">Channel</a>
+            <a href="team.html" data-translate-key="nav_team">Team</a>
+            <a href="about.html" data-translate-key="nav_about">About</a>
+            <a href="contact.html" data-translate-key="nav_contact">Contact</a>
+        </div>
+    </div>
+    <div class="side-nav-footer">
+        <p>Version 2.3.0</p>
+        <div class="side-nav-socials">
+            <a href="https://youtube.com/@sasangpiyoofficial" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/sasangpiyoofficial" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/sasangpiyoofficial" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</nav>
+
+<!-- এই স্টাইলটি হেডার এবং সাইড-ন্যাভের জন্য প্রয়োজনীয় -->
+<style>
+    /* Header Styles */
+    .header-wrapper { background-color: var(--bg-dark); position: sticky; top: 0; z-index: 1001; border-bottom: 1px solid var(--border-color); }
+    .header { display: flex; align-items: center; padding: 10px 0; }
+    .hamburger-menu { font-size: 24px; cursor: pointer; color: var(--text-secondary); margin-right: 15px; }
+    .search-container { flex-grow: 1; position: relative; }
+    .search-container input { width: 100%; padding: 8px 15px; border-radius: 20px; border: 1px solid var(--border-color); background-color: var(--bg-light); color: var(--text-primary); }
+    .header-socials { display: none; /* Hide on mobile by default */ }
+    @media (min-width: 768px) {
+        .header-socials { display: flex; gap: 12px; margin: 0 15px; }
+        .header-socials a { color: var(--text-secondary); font-size: 18px; }
+    }
+    .header-logo img { width: 40px; height: 40px; border-radius: 50%; }
+
+    /* Controls Container */
+    .controls-container { display: flex; align-items: center; gap: 15px; margin: 0 15px; }
+    #language-select {
+        background-color: var(--bg-light); color: var(--text-secondary);
+        border: 1px solid var(--border-color); padding: 5px 8px;
+        border-radius: 5px; font-size: 14px; cursor: pointer;
+    }
+    #theme-toggle {
+        background: none; border: none; color: var(--text-secondary);
+        font-size: 20px; cursor: pointer; padding: 5px;
+    }
+    .light-theme #theme-toggle .fa-sun { display: none; }
+    body:not(.light-theme) #theme-toggle .fa-moon { display: none; }
+
+    /* Side Navigation Menu */
+    .side-nav { position: fixed; top: 0; left: -300px; width: 280px; height: 100%; background-color: var(--bg-light); z-index: 1003; transition: left 0.3s ease-in-out; display: flex; flex-direction: column; border-right: 1px solid var(--border-color); }
+    .side-nav.open { left: 0; }
+    .side-nav-main { padding: 20px; flex-grow: 1; overflow-y: auto; }
+    .side-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .close-btn { font-size: 24px; cursor: pointer; color: var(--text-secondary); }
+    .side-nav-title { font-family: 'Teko', sans-serif; font-size: 28px; font-weight: 600; text-align: center; line-height: 1; }
+    .side-nav-title .title-text { background: linear-gradient(90deg, #4169E1 25%, #C0C0C0 50%, #DC143C 75%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 2px rgba(255,255,255,0.3); }
+    .side-nav-title .reflection-text { display: block; transform: scaleY(-1); background: linear-gradient(90deg, #4169E1 25%, #C0C0C0 50%, #DC143C 75%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.2; }
+    .side-nav-links { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+    .side-nav-links a { text-decoration: none; color: var(--text-primary); font-size: 16px; padding: 10px; border-radius: 5px; }
+    .side-nav-links a:hover { background-color: var(--border-color); }
+    .side-nav-footer { padding: 20px; border-top: 1px solid var(--border-color); text-align: center; }
+    .side-nav-footer p { font-size: 12px; color: var(--text-secondary); margin-bottom: 15px; }
+    .side-nav-socials a { color: var(--text-secondary); font-size: 20px; margin: 0 8px; }
+    
+    /* Overlay for Side Nav */
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1002; opacity: 0; visibility: hidden; transition: opacity 0.3s; }
+    .overlay.show { opacity: 1; visibility: visible; }
+</style>
